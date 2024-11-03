@@ -1,9 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("/fonts/CircularStd-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Circular Std - Bold */
+@font-face {
+  font-family: "Circular Std";
+  src: url("/fonts/CircularStd-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Circular Std - Medium */
+@font-face {
+  font-family: "Circular Std";
+  src: url("/fonts/CircularStd-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Circular Std - Book */
+@font-face {
+  font-family: "Circular Std";
+  src: url("/fonts/CircularStd-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Circular Std", Roboto, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +47,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.hero h1 {
+  color: #101010;
+  font-size: 115.62px;
+  line-height: 115px;
+  letter-spacing: -4px;
+  font-weight: 900;
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 68px;
+    line-height: 68px;
+  }
 }

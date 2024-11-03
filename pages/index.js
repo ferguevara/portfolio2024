@@ -1,65 +1,49 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+import CaseStudies from '../components/CaseStudies';
+import FAQ from '../components/FAQ';
+import Footer from '../components/Footer';
+import { NextSeo } from 'next-seo';
+import { useRef } from 'react';
 
 export default function Home() {
+  const footerRef = useRef(null);
+
+  const scrollToFooter = () => {
+    if (footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    <>
+      <NextSeo
+        title="Fernando Guevara | Digital Product Designer"
+        description="Hi 👋, I am a product designer with 10+ years of experience in healthcare, edtech, and startups. I create intuitive experiences through research, data analysis, prototyping, and agile collaboration. My designs improve engagement, conversion rates, and growth while aligning with business goals."
+        canonical="https://ferguevara.com/"
+        openGraph={{
+          url: 'https://ferguevara.com/',
+          title: 'Fernando Guevara | Digital Product Designer',
+          description: 'Hi 👋, I am a product designer with 10+ years of experience in healthcare, edtech, and startups. I create intuitive experiences through research, data analysis, prototyping, and agile collaboration. My designs improve engagement, conversion rates, and growth while aligning with business goals.',
+          images: [
+            {
+              url: 'https://your-portfolio.com/og-image.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Portfolio Image',
+            },
+          ],
+        }}
+      />
+      <Header scrollToFooter={scrollToFooter} />
+      <Hero />
+      <Projects />
+      <CaseStudies />
+      <FAQ />
+      <div ref={footerRef}>
+        <Footer />
+      </div>
+    </>
+  );
 }

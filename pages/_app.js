@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {
@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       {/* Google Analytics */}
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-CL71BQ2NNY`}
+        src={`https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTICS_ID`}
       />
       <Script
         id="google-analytics"
@@ -17,18 +17,20 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-CL71BQ2NNY');
+            gtag('config', 'YOUR_GOOGLE_ANALYTICS_ID', {
+              page_path: window.location.pathname,
+            });
           `,
         }}
       />
 
-      {/* Google Search Console Verification */}
+      {/* Google Search Console */}
       <Script
         id="google-search-console"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-            <meta name="google-site-verification" content="2mrPXdIQRZerITtwjUnK5HC9k4YnwkXGrmVvefGbfJs" />
+            <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
           `,
         }}
       />
@@ -39,5 +41,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
-

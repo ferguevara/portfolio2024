@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       {/* Google Analytics */}
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-CL71BQ2NNY`}
+        src="https://www.googletagmanager.com/gtag/js?id=G-CL71BQ2NNY"
       />
       <Script
         id="google-analytics"
@@ -23,9 +23,6 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-
-      {/* Google Search Console */}
-      <meta name="google-site-verification" content="2mrPXdIQRZerITtwjUnK5HC9k4YnwkXGrmVvefGbfJs" />
 
       <Component {...pageProps} />
     </>

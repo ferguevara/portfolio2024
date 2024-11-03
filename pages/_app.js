@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       {/* Google Analytics */}
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTICS_ID`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-CL71BQ2NNY`}
       />
       <Script
         id="google-analytics"
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'YOUR_GOOGLE_ANALYTICS_ID', {
+            gtag('config', 'G-CL71BQ2NNY', {
               page_path: window.location.pathname,
             });
           `,
@@ -25,15 +25,7 @@ function MyApp({ Component, pageProps }) {
       />
 
       {/* Google Search Console */}
-      <Script
-        id="google-search-console"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
-          `,
-        }}
-      />
+      <meta name="google-site-verification" content="2mrPXdIQRZerITtwjUnK5HC9k4YnwkXGrmVvefGbfJs" />
 
       <Component {...pageProps} />
     </>

@@ -37,7 +37,6 @@ const Footer = () => {
           <div className="flex justify-center space-x-6">
             <Link href="https://dribbble.com/ferguevara" className="hover:text-blue-500">Dribbble</Link>
             <Link href="https://www.behance.net/fernandoguevara" className="hover:text-blue-500">Behance</Link>
-            <Link href="https://www.instagram.com/fernandoguevar4/" className="hover:text-blue-500">Instagram</Link>
             <Link href="https://www.linkedin.com/in/fer-guevara/" className="hover:text-blue-500">LinkedIn</Link>
             <Link href="https://x.com/ferguevarai" className="hover:text-blue-500">TwitterX</Link>
           </div>

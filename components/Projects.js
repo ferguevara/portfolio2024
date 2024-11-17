@@ -37,7 +37,7 @@ export default function Projects() {
               </div>
             </a>
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <h3 className="text-xl font-semibold mb-2 py-2">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 py-4">{project.title}</h3>
             </a>
           </div>
         ))}
